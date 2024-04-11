@@ -72,6 +72,7 @@ const router = createRouter({
       ]
     },
 
+    // Detail Story adn User For Guest
     {
       path: '/@',
       children: [
@@ -104,7 +105,7 @@ const router = createRouter({
               }
             }
           ]
-        }
+        },
       ]
     },
 
@@ -116,6 +117,15 @@ const router = createRouter({
       meta: {
         auth: true,
         newStory: true
+      }
+    },
+    // Your Story
+    {
+      path: '/me/stories',
+      name: 'your-story',
+      component: () => import('../views/story/YourStories.vue'),
+      meta: {
+        auth: true,
       }
     }
   ]

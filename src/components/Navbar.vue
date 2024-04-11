@@ -150,7 +150,7 @@ async function publishStory() {
             <Stories />
             Library
           </router-link>
-          <router-link to="" class="flex items-center gap-3 hover:text-gray-600">
+          <router-link :to="{name: 'your-story'}" class="flex items-center gap-3 hover:text-gray-600">
             <Library />
             Stories
           </router-link>
@@ -195,7 +195,7 @@ async function publishStory() {
             <Stories />
             Library
           </router-link>
-          <router-link to="" class="flex items-center gap-3 hover:text-gray-600">
+          <router-link :to="{name: 'your-story'}" class="flex items-center gap-3 hover:text-gray-600">
             <Library />
             Stories
           </router-link>

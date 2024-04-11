@@ -10,6 +10,8 @@ export interface Story {
   body: string
   slug: string
   author: string
+  username:string
+  topic:string
   created_at: string
   timetoRead: number
   imageUrl?: string
@@ -19,6 +21,10 @@ export interface Story {
 export interface StoryData {
   title: string
   body: string
+}
+
+export interface MyStory {
+  author: string
 }
 
 export const useStoriesStore = defineStore('stories', {
@@ -44,10 +50,10 @@ export const useStoriesStore = defineStore('stories', {
       }
     },
 
-    async getMyStories() {
+    async getMyStories(payload : MyStory) {
       try {
-        const { data } = await useApiPrivate().get(`/api/v1/stories/${authStore.userDetail.id}`)
-        this.stories = data
+        const { data } = await useApiPrivate().post(`/api/v1/stories/me/stories`, payload )
+        this.stories = data.data
         return data
       } catch (error: Error | any) {
         throw error.message

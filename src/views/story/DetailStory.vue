@@ -12,9 +12,8 @@ onMounted(async () => {
 </script>
 
 <template>
-    <!-- <div>{{ storyStore.story }}</div> -->
     <div class="mx-6 md:mx-10 lg:mx-56">
-        <p class="font-bold text-2xl">{{ storyStore.story.title }}</p>
+        <p class="font-bold text-3xl my-5">{{ storyStore.story.title }}</p>
         <div>
             <div v-html="storyStore.story.body"></div>
         </div>
