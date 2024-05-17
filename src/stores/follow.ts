@@ -14,6 +14,7 @@ export interface Stories {
   body: string
   author: string
   created_at: string
+  topic:string
   timetoRead: number
   imageUrl?: string
   full_name?: string
